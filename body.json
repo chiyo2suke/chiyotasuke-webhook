@@ -1,0 +1,8 @@
+{
+  "name": "webhookTest",
+  "destination": "https://79c5ca6721da.ngrok-free.app/hook",
+  "secret": "chiyotasukeWantsWebhook",
+  "subscriptions": {
+    "endBasho": true
+  }
+}

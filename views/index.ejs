@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Data Display</title>
+</head>
+<body>
+    <h1>Webhook endpoint</h1>
+
+    <% if (postData) { %>
+        <h2>Received Data:</h2>
+        <pre><%= JSON.stringify(postData, null, 2) %></pre>
+    <% } %>
+</body>
+</html>
