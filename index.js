@@ -2,6 +2,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
+const fs = require('fs');
 
 // Initialize express and define a port
 const app = express()
@@ -40,6 +41,7 @@ app.post('/hook', (req, res) => {
   console.log("\nBody:")
   console.dir(receivedData);
   res.status(204).send("I received payload");
+  fs.writeFileSync('data.txt', JSON.stringify(receivedData));
 });
 
 // Start express on the defined port
