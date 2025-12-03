@@ -41,7 +41,7 @@ app.post('/hook', (req, res) => {
   console.log("\nBody:")
   console.dir(receivedData);
   res.status(204).send("I received payload");
-  fs.writeFileSync('data.txt', JSON.stringify(receivedData));
+  fs.writeFileSync('data.txt', "data write");
 });
 
 // Start express on the defined port
