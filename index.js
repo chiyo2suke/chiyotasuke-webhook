@@ -13,7 +13,7 @@ const body = {
   "destination": "https://chiyotasuke-webhook.vercel.app/hook",
   "secret": "chiyotasukeWantsWebhook",
   "subscriptions": {
-    "endBasho": true
+    "matchResults": true
   }
 };
 var webhookData;
