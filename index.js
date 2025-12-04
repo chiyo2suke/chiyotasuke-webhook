@@ -7,7 +7,7 @@ const fs = require('fs');
 // Initialize express and define a port
 const app = express()
 const PORT = 3000
-const apiUrl = 'https://www.sumo-api.com/api/webhook/test?type=endBasho';
+const apiUrl = 'https://www.sumo-api.com/api/webhook/test?type=matchResults';
 const body = {
   "name": "webhookTest",
   "destination": "https://chiyotasuke-webhook.vercel.app/hook",
@@ -16,9 +16,9 @@ const body = {
     "endBasho": true
   }
 };
+var webhookData;
 
 app.use(express.json());
-// Set up a simple view engine (e.g., EJS) for rendering HTML
 
 app.get('/hook', (req, res) => {
   axios.post(apiUrl, body)
@@ -41,7 +41,7 @@ app.post('/hook', (req, res) => {
   console.log("\nBody:")
   console.dir(receivedData);
   res.status(204).send("I received payload");
-  fs.writeFileSync('data.txt', "data write");
+  webhookData = receivedData;
 });
 
 // Start express on the defined port
